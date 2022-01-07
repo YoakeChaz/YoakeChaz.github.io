@@ -337,10 +337,15 @@ git branch -M main //更改當前分支名稱git remote
                 <div class="col-md-8">
                     <p>
                       
-                        通用過濾出需要的資料#D2019_check = D2019[(D2019$rent_time==(&quot;rent_time&quot;)),]
-table 跟 c() 連用 同時table 多個資料#table(c(x$rent_station, x$return_station))
-文字貼上的區別#c(&quot;a&quot;,&quot;b&quot;) #這很好用
-切割文字(效率偏差)#strsplit(bike_dat
+                        通用
+## 過濾出需要的資料
+D2019_check = D2019[(D2019$rent_time==(&quot;rent_time&quot;)),]
+## table 跟 c() 連用 同時table 多個資料
+table(c(x$rent_station, x$return_station))
+## 文字貼上的區別
+c(&quot;a&quot;,&quot;b&quot;) #這很好用
+## 切割文字(效率偏差)
+strs
                       
                     </p>
                     
