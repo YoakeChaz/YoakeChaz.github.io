@@ -224,7 +224,34 @@
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<p>TEST</p>
+      		<h1 id="通用"><a href="#通用" class="headerlink" title="通用"></a>通用</h1><h2 id="過濾出需要的資料"><a href="#過濾出需要的資料" class="headerlink" title="過濾出需要的資料"></a>過濾出需要的資料</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#D2019_check = D2019[(D2019$rent_time==(&quot;rent_time&quot;)),]</span><br></pre></td></tr></table></figure>
+<h2 id="table-跟-c-連用-同時table-多個資料"><a href="#table-跟-c-連用-同時table-多個資料" class="headerlink" title="table 跟 c() 連用 同時table 多個資料"></a>table 跟 c() 連用 同時table 多個資料</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#table(c(x$rent_station, x$return_station))</span><br></pre></td></tr></table></figure>
+<h2 id="文字貼上的區別"><a href="#文字貼上的區別" class="headerlink" title="文字貼上的區別"></a>文字貼上的區別</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#c(&quot;a&quot;,&quot;b&quot;) #這很好用</span><br></pre></td></tr></table></figure>
+<h2 id="切割文字-效率偏差"><a href="#切割文字-效率偏差" class="headerlink" title="切割文字(效率偏差)"></a>切割文字(效率偏差)</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#strsplit(bike_data$starttime[cut_num],split = &#x27;/&#x27;)</span><br></pre></td></tr></table></figure>
+<h2 id="尋找資料"><a href="#尋找資料" class="headerlink" title="尋找資料"></a>尋找資料</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#which(A==3)</span><br></pre></td></tr></table></figure>
+<h2 id="寫入資料"><a href="#寫入資料" class="headerlink" title="寫入資料"></a>寫入資料</h2><p>  #write.csv(T2016_06,file=”/Users/chenxinhong/Desktop/youbike_data/2016/xxx.csv”,row.names = FALSE)</p>
+<h2 id="疊圖"><a href="#疊圖" class="headerlink" title="疊圖"></a>疊圖</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#par(new=TRUE)</span><br></pre></td></tr></table></figure>
+<h2 id="多重顯示plot"><a href="#多重顯示plot" class="headerlink" title="多重顯示plot"></a>多重顯示plot</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">  #par(mfcol=c(1,2))</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 矩陣</span><br><span class="line">## 依照位置橫向擺放矩陣</span><br></pre></td></tr></table></figure>
+<p>  #data2&lt;-cbind(z_down[2:4],c2_del)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">## 依照位置縱向擺放矩陣</span><br></pre></td></tr></table></figure>
+<p>  #data2&lt;-rbind(z_up[1:4],data2)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">## 矩陣轉畫圖格式</span><br></pre></td></tr></table></figure>
+<p>  #graph.adjacency(xx) </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">## 畫圖格式轉矩陣</span><br></pre></td></tr></table></figure>
+<p>  #as_adjacency_matrix(xx)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 時間處理</span><br><span class="line">## 計算天數</span><br></pre></td></tr></table></figure>
+<p>  #x&lt;-as.Date(“1970-01-01”)<br>  #unclass(x) #設定第０天<br>  #unclass(as.Date(“1970-02-01”)) #19700201代表第31天</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">## 切割時間</span><br></pre></td></tr></table></figure>
+<p>  #x &lt;- as.POSIXct(“2016-06-25 21:00:00”)<br>  #year(x);month(x);day(x);hour(x);minute(x);second(x)<br>  #[1] 2016   [1] 6   [1] 25   [1] 21   [1] 0   [1] 0</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">## 新增矩陣的資料</span><br></pre></td></tr></table></figure>
+<p>  #move1_matric&lt;-cbind(c(d2[,2]),d2) #新增一行 砍一行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">## 刪除矩陣的資料</span><br></pre></td></tr></table></figure>
+<p>  #move1_matric = move1_matric[,-3]</p>
+<pre><code>
+
+
+
+</code></pre>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
