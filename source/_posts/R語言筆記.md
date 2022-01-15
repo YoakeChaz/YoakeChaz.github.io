@@ -33,6 +33,12 @@ tags:
   write.csv(T2016_06,file="/Users/chenxinhong/Desktop/youbike_data/2016/xxx.csv",row.names = FALSE)
 ``` 
  <br>
+ 
+## 關聯性分析
+```  
+cor(D3[,c("Gender0","Education0","Income0","Age","Card0","Credit_Limit","Annual_trans","Annual_trans_c")])
+``` 
+ <br>
  <br>
  <br>
  
