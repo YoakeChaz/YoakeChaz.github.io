@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>R語言筆記 | Hexo</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Hexo">
+    <meta name="author" content="John Doe">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+    
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N8BDM162GD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-N8BDM162GD');
+</script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/hexo/" class="animsition-link">hexo<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/日本語/" class="animsition-link">日本語<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/程式指令筆記/" class="animsition-link">程式指令筆記<small>(4)</small></a></li>
+				    
+				    <li><a href="/categories/第一篇文章/" class="animsition-link">第一篇文章<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                    <li><a target="_blank" rel="noopener" href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about"></a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss"></a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">Hexo</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2022-01-02T13:14:12.000Z" itemprop="datePublished">
+          2022-01-02
+      </time>
+    
+    
+    | 
+    <a href='/tags/程式筆記/'>程式筆記</a>,
+    
+    <a href='/tags/R語言/'>R語言</a>
+    
+    
+</span>
+                <h1>R語言筆記</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="通用"><a href="#通用" class="headerlink" title="通用"></a>通用</h1><br>
+## 過濾出需要的資料
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">D2019_check = D2019[(D2019$rent_time==(&quot;rent_time&quot;)),]</span><br></pre></td></tr></table></figure>
+## table 跟 c() 連用 同時table 多個資料
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">table(c(x$rent_station, x$return_station))</span><br></pre></td></tr></table></figure>
+## 文字貼上的區別
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">c(&quot;a&quot;,&quot;b&quot;) #這很好用</span><br></pre></td></tr></table></figure>
+## 切割文字(效率偏差)
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">strsplit(bike_data$starttime[cut_num],split = &#x27;/&#x27;)</span><br></pre></td></tr></table></figure>
+## 尋找資料
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">which(A==3)</span><br></pre></td></tr></table></figure>
+## 寫入資料
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">write.csv(T2016_06,file=&quot;/Users/chenxinhong/Desktop/youbike_data/2016/xxx.csv&quot;,row.names = FALSE)</span><br></pre></td></tr></table></figure>
+ <br>
+ 
+<h2 id="關聯性分析"><a href="#關聯性分析" class="headerlink" title="關聯性分析"></a>關聯性分析</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cor(D3[,c(&quot;Gender0&quot;,&quot;Education0&quot;,&quot;Income0&quot;,&quot;Age&quot;,&quot;Card0&quot;,&quot;Credit_Limit&quot;,&quot;Annual_trans&quot;,&quot;Annual_trans_c&quot;)])</span><br></pre></td></tr></table></figure>
+ <br>
+ <br>
+ <br>
+ 
+<h1 id="圖片處理"><a href="#圖片處理" class="headerlink" title="圖片處理"></a>圖片處理</h1><br>
+## 疊圖
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">par(new=TRUE)</span><br></pre></td></tr></table></figure>
+## 多重顯示plot
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">par(mfcol=c(1,2))</span><br></pre></td></tr></table></figure>
+<br>
+<br>
+<br>
+
+<h1 id="矩陣"><a href="#矩陣" class="headerlink" title="矩陣"></a>矩陣</h1><br>
+## 依照位置橫向擺放矩陣
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">data2&lt;-cbind(z_down[2:4],c2_del)</span><br></pre></td></tr></table></figure>
+## 依照位置縱向擺放矩陣
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">data2&lt;-rbind(z_up[1:4],data2)</span><br></pre></td></tr></table></figure>
+## 矩陣轉畫圖格式
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph.adjacency(xx) </span><br></pre></td></tr></table></figure>
+## 畫圖格式轉矩陣
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">as_adjacency_matrix(xx)</span><br></pre></td></tr></table></figure>
+<br>
+<br>
+<br>
+
+<h1 id="時間處理"><a href="#時間處理" class="headerlink" title="時間處理"></a>時間處理</h1><br>
+## 計算天數
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">x&lt;-as.Date(&quot;1970-01-01&quot;) </span><br><span class="line">unclass(x) #設定第０天</span><br><span class="line">unclass(as.Date(&quot;1970-02-01&quot;)) #19700201代表第31天</span><br></pre></td></tr></table></figure>
+## 切割時間
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">x &lt;- as.POSIXct(&quot;2016-06-25 21:00:00&quot;)</span><br><span class="line">year(x);month(x);day(x);hour(x);minute(x);second(x)</span><br></pre></td></tr></table></figure>
+## 新增矩陣的資料
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">move1_matric&lt;-cbind(c(d2[,2]),d2) #新增一行 砍一行</span><br></pre></td></tr></table></figure>
+## 刪除矩陣的資料
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">move1_matric = move1_matric[,-3]</span><br></pre></td></tr></table></figure>
+<br>
+<br>
+<br>
+
+<h3 id="更新資訊"><a href="#更新資訊" class="headerlink" title="更新資訊"></a>更新資訊</h3><p>2021/01/07 18:47</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2022/01/03/github%E4%BD%BF%E7%94%A8%E7%AD%86%E8%A8%98/" style="float: left;">
+        ← github使用筆記
+    </a>
+    
+    
+    <a class="pull-right" href="/2022/01/02/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E6%B8%AC%E8%A9%A6/">
+        第一篇文章測試 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2022<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Chaz
+                </p>
+                <p><a target="_blank" rel="noopener" href="//go.kieran.top" style="color: #767D84"></a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>
