@@ -230,6 +230,11 @@
 <h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>由於程式碼區塊的行號，在預覽的時候會有很多數字不方便預覽<br>打開hexo下的 _config.yml設定文件</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">highlight: </span><br><span class="line">  enable: true</span><br><span class="line">  line_number: false      //這裡的行號改成false</span><br><span class="line">  auto_detect: false</span><br></pre></td></tr></table></figure>
 
+<br>
+
+<h2 id="Please-make-sure-you-have-the-correct-access"><a href="#Please-make-sure-you-have-the-correct-access" class="headerlink" title="Please make sure you have the correct access"></a>Please make sure you have the correct access</h2><p> 無法hexo d 且遇到上述問題 可能發生2個問題</p>
+<p> 1.githu的token過期<br>    檢查github-&gt;setting-&gt;Developer settings-&gt;token<br>    看看裡頭是否有token 沒有的話 生成一個新的 並且複製key<br>    打開桌面右上方spotlight 輸key 進入鑰匙存取圈<br>    搜索鑰匙存取圈裡面的github相關金鑰 並把key複製進去</p>
+<p> 2.此電腦的SSH沒有設定至github<br>    先在終端機輸入<br>    <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh -v git@github.com</span><br></pre></td></tr></table></figure><br>    看看是否連得上 如果連不上 就是SSH未設定的緣故<br>    接著依序輸入<br>    <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-agent -s</span><br><span class="line">ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure><br>    打開你自己生成的id_rsa.pub (/Users/user/.ssh/id_rsa) 在終端機有顯示位置<br>    將內容複製起來<br>    到github settings-&gt;SSH and GPG keys-&gt;new SSH key<br>    把剛剛生成的金鑰複製進去</p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
